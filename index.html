@@ -20,7 +20,7 @@
                 <a href="./index.html" class="header__logo"><img src="img/logo/logo.png" alt="mbar.go"></a>
                 <nav class="header__nav">
                     <a href="#" class="header__nav__link">Главная</a>
-                    <a href="#" class="header__nav__link">Девушки</a>
+                    <a href="./questionnaires.html" class="header__nav__link">Девушки</a>
                     <a href="#" class="header__nav__link">Услуги</a>
                     <a href="#" class="header__nav__link">Интерьер</a>
                     <a href="#" class="header__nav__link">Акции</a>
@@ -33,12 +33,12 @@
         <div class="header__menu">
             <p class="header__menu__close">&#10006;</p>
             <div class="header__menu__wrap">
-                <a href="" class="header__menu__link">Главная</a>
-                <a href="" class="header__menu__link">Девушки</a>
-                <a href="" class="header__menu__link">Услуги</a>
-                <a href="" class="header__menu__link">Интерьер</a>
-                <a href="" class="header__menu__link">Акции</a>
-                <a href="" class="header__menu__link">Контакты</a>
+                <a href="#" class="header__menu__link">Главная</a>
+                <a href="./questionnaires.html" class="header__menu__link">Девушки</a>
+                <a href="#" class="header__menu__link">Услуги</a>
+                <a href="#" class="header__menu__link">Интерьер</a>
+                <a href="#" class="header__menu__link">Акции</a>
+                <a href="#" class="header__menu__link">Контакты</a>
             </div>
             <a href="tel:+78463794114" class="header__menu__tel">
                 <img src="img/logo/telMenu.png" alt="tel">
@@ -64,7 +64,7 @@
                 </h1>
                 <p class="main__text">В твоих руках неограниченная власть — распоряжайся ею правильно. Мы будем полностью в твоем распоряжении.</p>
                 <p class="main__text--bottom">Только отдай приказ</p>
-                <button class="button main__button index__button">Подробнее</button>
+                <button class="button main__button index__button" data-modal>Подробнее</button>
                 <div class="main__inner">
                     <p class="main__inner__text">войти внутрь</p>
                     <img src="img/index/arrow.png" alt="arow">
@@ -90,13 +90,76 @@
                 <h3 class="section__title master__title">Наши мастера</h3>
                 <p class="section__text master__text">Все мастера студии уникальные, прошедшие отбор на изумительную красоту, где каждая девушка имеет свой стиль и свою изюминку, посмотрите анкеты и узнайте больше о наших мастерах.</p>
                 <div class="master__wrap">
-                    <a href="#" class="button master__button index__button">Посмотреть анкеты</a>
+                    <a href="./questionnaires.html" class="button master__button index__button">Посмотреть анкеты</a>
                 </div>
             </div>
         </section>
         <!-- /.section master -->
 
     </main>
+
+    <footer class="footer section">
+        <div class="container">
+            <div class="footer__row row">
+                <a href="./index.html" class="footer__logo"><img src="img/logo/logoFooter.png" alt="logo"></a>
+                <div class="footer__box footer__box--left">
+                    <p class="footer__title">Разделы сайта</p>
+                    <div class="footer__box__inner">
+                        <div class="footer__wrap">
+                            <a href="#" class="footer__link">Главная</a>
+                            <a href="./questionnaires.html" class="footer__link">Девушки</a>
+                            <a href="#" class="footer__link">Услуги</a>
+                        </div>
+                        <div class="footer__wrap">
+                            <a href="#" class="footer__link">Интерьер</a>
+                            <a href="#" class="footer__link">Акции</a>
+                            <a href="#" class="footer__link">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__box footer__box--right">
+                    <p class="footer__text">Данные, размещенные на сайте, представляют собой лишь информационный характер. Администрация сайта не преследует цели оскорбить честь и достоинство посетителей сайта.</p>
+                    <p class="footer__text">Copyright © MEN'S CLUB, 2018. Все права защищены.</p>
+                    <p class="footer__text">Несанкционированное копирование материалов сайта запрещено.</p>
+                    <p class="footer__text">Сайт имеет возрастное ограничение 18+.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /.footer section -->
+
+    <div class="modal">
+        <form action="#" class="modal__dialog">
+            <p class="modal__close">&#10006;</p>
+            <p class="modal__title">Закажите услугу</p>
+            <p class="modal__subtitle">Наш менеджер свяжется с вами в ближайшее время</p>
+            <div class="modal__input-group">
+                <input type="text" placeholder="Имя" name="name" class="modal__input modal__input--name">
+            </div>
+            <div class="modal__input-group">
+                <input type="tel" placeholder="+7 (___) ___-__-__" name="tel" class="modal__input">
+            </div>
+            <button class="button modal__button">Заказать</button>
+            <label for="check" class="modal__label">
+                Ваш телефон необходим только для связи с Вами. Он ни в коем случае не будет передан третьим лицам.
+                <input checked name="check" id="check" class="modal__check" type="checkbox">
+                <div class="modal__ok"></div>
+            </label>
+        </form>
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal-success">
+        <div class="modal-success__dialog">
+            <p class="modal-success__close">&#10006;</p>
+            <p class="modal-success__text">Наш менеджер свяжется <br> с вами в ближайшее время!</p>
+        </div>
+    </div>
+    <!-- /.modal-success -->
+
+    <a href="tel:+78463794114" class="phone">
+        <img src="./img/logo/phone.png" alt="phone">
+    </a>
     
 
     <script src="js/script.js"></script>

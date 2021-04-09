@@ -1,0 +1,28 @@
+.questMain
+    background-image: url(../img/quest/bgQuestMain.png)
+    background-repeat: no-repeat
+    background-position-y: -80px
+    background-position-x: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: calc( 100vh - 119px )
+    padding-bottom: 55px
+    padding-top: 20px
+    &__arrow
+        display: flex
+        flex-direction: column
+        align-items: center
+        cursor: pointer
+        &--2
+            margin-top: -14px
+            animation-name: scrollDownQuest
+            animation-duration: 5s
+            animation-iteration-count: infinite
+    &__title
+        margin-bottom: 75px
+    &__text
+        max-width: 1200px
+        margin: auto
+        margin-bottom: 0 !important

@@ -1,4 +1,33 @@
 @media screen and ( max-width: 1250px )
+    .questMain
+        height: calc( 100vh - 119px )
+        background-size: cover
+        background-position-y: 0
+        &__title
+            margin-bottom: 55px
+        &__text
+            max-width: 900px
+    .phone
+        width: 82px
+        height: 82px
+        right: 30px
+        bottom: 30px
+        img
+            width: 44px
+    .footer
+        padding-top: 50px
+        padding-bottom: 50px
+        &__logo
+            width: 156px
+        &__text
+            font-size: 14px
+            max-width: 540px
+            &:first-of-type
+                margin-bottom: 25px
+        &__link
+            font-size: 14px
+        &__title
+            font-size: 16px
     .master
         padding-top: 210px
         padding-bottom: 245px
@@ -67,6 +96,90 @@
                     font-size: 35px
 
 @media screen and ( max-width: 992px )
+    .questMain
+        height: calc( 100vh - 95px )
+        padding-bottom: 22px
+        background-size: cover
+        background-position-y: 0
+        &__text
+            max-width: 565px
+        &__arrow
+            &--2
+                margin-top: -7px
+        &__title
+            margin-bottom: 40px
+        &__arrow
+            width: 25px
+    .phone
+        width: 58px
+        height: 58px
+        right: 10px
+        bottom: 10px
+        img
+            width: 30px
+    .modal-success
+        &__dialog
+            width: 320px
+            height: 320px
+            background-image: url(../img/bg/bgModalSuccessMobile.png)
+        &__text
+            font-size: 14px
+    .modal
+        &__ok
+            width: 10px
+            height: 10px
+            transform: translateY(2px)
+            top: 0
+        &__label
+            font-size: 9px
+            line-height: 130%
+            width: 200px
+            padding-left: 17px
+        &__button
+            width: 200px
+            font-size: 14px
+            line-height: 150%
+            margin-bottom: 22px
+        &__input
+            font-size: 14px
+            padding: 14px 30px
+            width: 200px
+            margin-bottom: 14px
+            &--name
+                text-align: center
+        &__title
+            font-size: 18px
+            margin-bottom: 20px
+        &__subtitle
+            font-size: 14px
+            margin-bottom: 30px
+            max-width: 245px
+        &__dialog
+            padding: 60px 30px 25px
+            background-image: url(../img/bg/bgModalMobile.png)
+        &__close
+            top: 25px
+            right: 15px
+            font-size: 16px
+    .footer
+        background-size: auto
+        &__logo
+            grid-area: 1/1/2/2
+            justify-self: end
+        &__text
+            text-align: center
+        &__row
+            display: grid
+            grid-template: auto auto / 1fr 1fr
+            row-gap: 40px
+            column-gap: 80px
+            justify-items: center
+        &__box
+            &--left
+                grid-area: 1/2/2/3
+                justify-self: start
+            &--right
+                grid-area: 2/1/3/3
     .master
         padding-top: 180px
         padding-bottom: 200px
@@ -159,6 +272,26 @@
         &__tel
             display: block
 @media screen and ( max-width: 575px )
+    .footer
+        padding-top: 35px
+        padding-bottom: 35px
+        &__title
+            font-size: 11px
+            margin-bottom: 10px
+        &__link
+            font-size: 11px
+            margin-bottom: 10px
+        &__text
+            font-size: 10px
+            text-align: left
+            max-width: 385px
+            &:first-of-type
+                margin-bottom: 10px
+        &__row
+            grid-gap: 40px
+        &__logo
+            width: 110px
+            justify-self: center
     .prog
         background-image: url(../img/index/bgProgMobile.png)
         background-position-x: 0px
@@ -167,7 +300,20 @@
         &__button
             margin-bottom: 40px
 @media screen and ( max-width: 450px )
+    .footer
+        &__row
+            grid-gap: 20px
     .master
         background-image: url(../img/index/bgMasterMobile.png)
     .main
         background-image: url(../img/index/bgMainMobile.png)
+
+@media screen and ( max-height: 450px )
+    .questMain
+        padding-top: 10px
+        padding-bottom: 10px
+        &__title
+            margin-bottom: 15px
+    .modal
+        overflow: auto
+        align-items: flex-start
