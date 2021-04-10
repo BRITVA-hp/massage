@@ -18,43 +18,45 @@ window.addEventListener('DOMContentLoaded', () => {
             src = [],
             counter = 0;
 
-        imgsSrc_.forEach(item => {
-            src.push(item.getAttribute('src'));
-        });
-
-        prev_.addEventListener('click', () => {
-            counter--;
-            if (counter < 0) {
-                counter = 3;
-            }
-            angle += 90;
-            src.unshift(src.pop());
-            cubes_.forEach((item, index)=> {
-                for (let i = 0; i < item.children.length; i++) {
-                    if (i == counter) {
-                        item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
-                    }
-                }
-                item.style.transform = `rotateY(${angle}deg)`;
+        if (imgsSrc_.length > 0) {
+            imgsSrc_.forEach(item => {
+                src.push(item.getAttribute('src'));
             });
-        });
-
-        next_.addEventListener('click', () => {
-            counter++;
-            if (counter > 3) {
-                counter = 0;
-            }
-            angle -= 90;
-            src.push(src.shift());
-            cubes_.forEach((item, index)=> {
-                for (let i = 0; i < item.children.length; i++) {
-                    if (i == counter) {
-                        item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
-                    }
+    
+            prev_.addEventListener('click', () => {
+                counter--;
+                if (counter < 0) {
+                    counter = 3;
                 }
-                item.style.transform = `rotateY(${angle}deg)`;
+                angle += 90;
+                src.unshift(src.pop());
+                cubes_.forEach((item, index)=> {
+                    for (let i = 0; i < item.children.length; i++) {
+                        if (i == counter) {
+                            item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
+                        }
+                    }
+                    item.style.transform = `rotateY(${angle}deg)`;
+                });
             });
-        });
+    
+            next_.addEventListener('click', () => {
+                counter++;
+                if (counter > 3) {
+                    counter = 0;
+                }
+                angle -= 90;
+                src.push(src.shift());
+                cubes_.forEach((item, index)=> {
+                    for (let i = 0; i < item.children.length; i++) {
+                        if (i == counter) {
+                            item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
+                        }
+                    }
+                    item.style.transform = `rotateY(${angle}deg)`;
+                });
+            });
+        }
     }
 
     slider3d('.questSl__src', '.questSl__cube--1', '.questSl__arrow__prev--1', '.questSl__arrow__next--2');

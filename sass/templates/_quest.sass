@@ -60,12 +60,15 @@
         display: block
         padding-left: 35px
         cursor: pointer
+        br
+            display: none
     &__button
         padding: 13px 0
         width: 252px
         font-size: 22px
         line-height: 120%
     &__row
+        position: relative
         &--form
             justify-content: flex-start
             margin-bottom: 15px
@@ -168,7 +171,7 @@
         width: 252px
         height: 302px
         position: relative
-        margin-right: 115px
+        margin-right: 115px 
         &:last-of-type
             margin-right: 0
     &__cube
@@ -210,3 +213,4 @@
 
 .db
     display: none
+    overflow: hidden

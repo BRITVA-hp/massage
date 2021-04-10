@@ -1,4 +1,139 @@
+@media screen and ( max-width: 1750px )
+    .questSl
+        &__row
+            padding-left: 80px
+@media screen and ( max-width: 1600px )
+    .questSl
+        &__cube
+            &--big
+                transform-origin: center center -200px
+        &__img
+            &--2
+                &--big
+                    transform: rotateY(90deg) translateX(50%) translateZ(200px)
+            &--3
+                &--big
+                    transform: rotateY(180deg) translateZ(400px)
+            &--4
+                &--big
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(200px)
+        &__box
+            &--left
+                width: 400px
+                height: 480px
+@media screen and ( max-width: 1450px )
+    .questSl
+        &__row
+            padding-left: 0
+            justify-content: space-around
+        &__label
+            font-size: 12px
+            width: 500px
+        &__param
+            margin-bottom: 30px
+            &__item
+                padding: 0 35px
+            &__text
+                font-size: 16px
+            &__dig
+                font-size: 22px
+        &__text
+            font-size: 20px
+            max-width: 530px
+        &__name
+            font-size: 40px
+        &__input
+            width: 200px
+            margin-right: 100px
+            padding: 15px
+            font-size: 16px
+        &__button
+            width: 200px
+        &__wrap
+            width: 200px
+            height: 240px
+            margin-right: 100px
+        &__cube
+            &--small
+                transform-origin: center center -100px
+        &__img
+            &--2
+                &--small
+                    transform: rotateY(90deg) translateX(50%) translateZ(100px)
+            &--3
+                &--small
+                    transform: rotateY(180deg) translateZ(200px)
+            &--4
+                &--small
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(100px)
 @media screen and ( max-width: 1250px )
+    .questSl
+        padding-top: 95px
+        padding-bottom: 120px
+        &__arrow
+            width: 30px
+        &__ok
+            width: 15px
+            height: 15px
+        &__label
+            width: 370px
+            font-size: 10px
+            padding-left: 25px
+        &__button
+            width: 370px
+        &__input
+            width: 370px
+            margin-bottom: 15px
+        &__row
+            align-items: center
+            &--form
+                flex-direction: column
+        &__box
+            &--left
+                width: 300px
+                height: 360px
+        &__wrap
+            width: 150px
+            height: 180px
+            margin-right: 100px
+            margin-right: 70px
+        &__cube
+            &--big
+                transform-origin: center center -150px
+            &--small
+                transform-origin: center center -75px
+        &__img
+            &--2
+                &--big
+                    transform: rotateY(90deg) translateX(50%) translateZ(150px)
+                &--small
+                    transform: rotateY(90deg) translateX(50%) translateZ(75px)
+            &--3
+                &--big
+                    transform: rotateY(180deg) translateZ(300px)
+                &--small
+                    transform: rotateY(180deg) translateZ(150px)
+            &--4
+                &--big
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(150px)
+                &--small
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(75px)
+        &__button
+            font-size: 18px
+        &__input
+            font-size: 15px
+        &__param
+            &__item
+                padding: 0 25px
+            &__text
+                font-size: 13px
+            &__dig
+                font-size: 18px
+        &__text
+            font-size: 16px
+            max-width: 420px
+        &__name
+            font-size: 32px
     .questMain
         height: calc( 100vh - 119px )
         background-size: cover
@@ -95,7 +230,91 @@
                 &:last-of-type
                     font-size: 35px
 
+@media screen and ( max-width: 1100px )
+    .questSl
+        &__row
+            justify-content: space-between
+            padding-left: 70px
 @media screen and ( max-width: 992px )
+    .db
+        display: block
+        width: 250px
+        height: 300px
+        margin-bottom: 30px
+        opacity: 0
+        visibility: hidden
+    .questSl
+        padding-top: 40px
+        padding-bottom: 60px
+        &__cube
+            &--big
+                transform-origin: center center -125px
+        &__img
+            &--2
+                &--big
+                    transform: rotateY(90deg) translateX(50%) translateZ(125px)
+            &--3
+                &--big
+                    transform: rotateY(180deg) translateZ(250px)
+            &--4
+                &--big
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(125px)
+        &__button
+            width: 100%
+        &__input
+            width: 100%
+        &__form
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__box
+            &--left
+                width: 250px
+                height: 300px
+            &-wrap
+                position: absolute
+                left: 50%
+                top: 45px
+                transform: translateX(-50%)
+            &--right
+                align-items: center
+        &__row
+            padding-left: 0
+            justify-content: center
+            &--wrap
+                display: none
+        &__button
+            font-size: 14px
+        &__label
+            padding-left: 17px
+            width: auto
+            max-width: 310px
+            br
+                display: block
+        &__ok
+            width: 10px
+            height: 10px
+        &__param
+            margin-bottom: 50px
+            padding-bottom: 0
+            &::after
+                display: none
+            &__item
+                padding: 0 20px
+            &__dig
+                font-size: 14px
+                margin-bottom: 5px
+            &__text
+                font-size: 11px
+        &__text
+            font-size: 13px
+            margin-bottom: 34px
+            text-align: center
+            max-width: 350px
+        &__name
+            font-size: 25px
+            margin-bottom: 20px
+            text-align: center
     .questMain
         height: calc( 100vh - 95px )
         padding-bottom: 22px
@@ -272,6 +491,27 @@
         &__tel
             display: block
 @media screen and ( max-width: 575px )
+    .db
+        width: 200px
+        height: 240px
+    .questSl
+        &__cube
+            &--big
+                transform-origin: center center -100px
+        &__img
+            &--2
+                &--big
+                    transform: rotateY(90deg) translateX(50%) translateZ(100px)
+            &--3
+                &--big
+                    transform: rotateY(180deg) translateZ(200px)
+            &--4
+                &--big
+                    transform: rotateY(-90deg) translateX(-50%) translateZ(100px)
+        &__box
+            &--left
+                width: 200px
+                height: 240px
     .footer
         padding-top: 35px
         padding-bottom: 35px
