@@ -13,24 +13,27 @@ window.addEventListener('DOMContentLoaded', () => {
               cubes_= document.querySelectorAll(cubes),
               prev_ = document.querySelector(arrowPrev),
               next_ = document.querySelector(arrowNext);
-            
-        let angle = 0,
-            src = [],
-            counter = 0;
 
+        let startPoint,
+            swipeAction,
+            endPoint,
+            angle = 0,
+            src = [],
+            counter = 0,
+            isRight = false,
+            isLeft = false,
+            isNoSwaipe = false;
+            
         if (imgsSrc_.length > 0) {
-            imgsSrc_.forEach(item => {
-                src.push(item.getAttribute('src'));
-            });
-    
-            prev_.addEventListener('click', () => {
+
+            const prevSlide = function() {
                 counter--;
                 if (counter < 0) {
                     counter = 3;
                 }
                 angle += 90;
                 src.unshift(src.pop());
-                cubes_.forEach((item, index)=> {
+                cubes_.forEach((item, index) => {
                     for (let i = 0; i < item.children.length; i++) {
                         if (i == counter) {
                             item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
@@ -38,16 +41,16 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                     item.style.transform = `rotateY(${angle}deg)`;
                 });
-            });
+            };
     
-            next_.addEventListener('click', () => {
+            const nextSlide = function() {
                 counter++;
                 if (counter > 3) {
                     counter = 0;
                 }
                 angle -= 90;
                 src.push(src.shift());
-                cubes_.forEach((item, index)=> {
+                cubes_.forEach((item, index) => {
                     for (let i = 0; i < item.children.length; i++) {
                         if (i == counter) {
                             item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
@@ -55,6 +58,98 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                     item.style.transform = `rotateY(${angle}deg)`;
                 });
+            };
+
+            cubes_.forEach(item => {
+
+                item.addEventListener('touchstart', (e) => {
+                    startPoint = e.changedTouches[0].pageX;
+                });
+              
+                item.addEventListener('touchmove', (e) => {
+                    swipeAction = e.changedTouches[0].pageX - startPoint;
+                    item.style.transform = `rotateY(${swipeAction/2.5 + angle}deg)`;
+                    if (swipeAction > 0) {
+                        if (!isRight) {
+                            counter--;
+                            if (counter < 0) {
+                                counter = 3;
+                            }
+                            src.unshift(src.pop());
+                            cubes_.forEach((item, index) => {
+                                for (let i = 0; i < item.children.length; i++) {
+                                    if (i == counter) {
+                                        item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
+                                    }
+                                }
+                            });
+                            isRight = true;
+                        }
+                    } else {
+                        if (!isLeft) {
+                            counter++;
+                            if (counter > 3) {
+                                counter = 0;
+                            }
+                            src.push(src.shift());
+                            cubes_.forEach((item, index) => {
+                                for (let i = 0; i < item.children.length; i++) {
+                                    if (i == counter) {
+                                        item.children[i].firstElementChild.setAttribute('src', `${src[index]}`);
+                                    }
+                                }
+                            });
+                            isLeft = true;
+                        }
+                    }
+                });
+              
+                item.addEventListener('touchend', (e) => {
+                    endPoint = e.changedTouches[0].pageX;
+                    if (!isNoSwaipe) {
+                        if (Math.abs(startPoint - endPoint) > 0) {
+                            if (endPoint > startPoint) {
+                                counter++;
+                                if (counter > 3) {
+                                    counter = 0;
+                                }
+                                src.push(src.shift());
+                            } else {
+                                counter--;
+                                if (counter < 0) {
+                                    counter = 3;
+                                }
+                                src.unshift(src.pop());
+                            }
+                        }
+                        isNoSwaipe = true;
+                    }
+                    if (Math.abs(startPoint - endPoint) > 50) {
+                        isNoSwaipe = false;
+                        isRight = false;
+                        isLeft = false;
+                        if (endPoint < startPoint) {
+                            nextSlide();
+                        } else {
+                            prevSlide();
+                        }
+                    } else {
+                        item.style.transform = `rotateY(${angle}deg)`;
+                    }
+                });
+
+            });
+
+            imgsSrc_.forEach(item => {
+                src.push(item.getAttribute('src'));
+            });
+    
+            prev_.addEventListener('click', () => {
+                prevSlide();
+            });
+    
+            next_.addEventListener('click', () => {
+                nextSlide();
             });
         }
     }
