@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
             counter = 0,
             isRight = false,
             isLeft = false,
-            isNoSwaipe = false;
+            isNoSwipe = false;
             
         if (imgsSrc_.length > 0) {
 
@@ -83,6 +83,11 @@ window.addEventListener('DOMContentLoaded', () => {
                                     }
                                 }
                             });
+                            counter++;
+                            if (counter > 3) {
+                                counter = 0;
+                            }
+                            src.push(src.shift());
                             isRight = true;
                         }
                     } else {
@@ -99,6 +104,11 @@ window.addEventListener('DOMContentLoaded', () => {
                                     }
                                 }
                             });
+                            counter--;
+                            if (counter < 0) {
+                                counter = 3;
+                            }
+                            src.unshift(src.pop());
                             isLeft = true;
                         }
                     }
@@ -106,26 +116,8 @@ window.addEventListener('DOMContentLoaded', () => {
               
                 item.addEventListener('touchend', (e) => {
                     endPoint = e.changedTouches[0].pageX;
-                    if (!isNoSwaipe) {
-                        if (Math.abs(startPoint - endPoint) > 0) {
-                            if (endPoint > startPoint) {
-                                counter++;
-                                if (counter > 3) {
-                                    counter = 0;
-                                }
-                                src.push(src.shift());
-                            } else {
-                                counter--;
-                                if (counter < 0) {
-                                    counter = 3;
-                                }
-                                src.unshift(src.pop());
-                            }
-                        }
-                        isNoSwaipe = true;
-                    }
                     if (Math.abs(startPoint - endPoint) > 50) {
-                        isNoSwaipe = false;
+                        isNoSwipe = false;
                         isRight = false;
                         isLeft = false;
                         if (endPoint < startPoint) {
