@@ -21,8 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
             src = [],
             counter = 0,
             isRight = false,
-            isLeft = false,
-            isNoSwipe = false;
+            isLeft = false;
             
         if (imgsSrc_.length > 0) {
 
@@ -117,7 +116,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('touchend', (e) => {
                     endPoint = e.changedTouches[0].pageX;
                     if (Math.abs(startPoint - endPoint) > 50) {
-                        isNoSwipe = false;
                         isRight = false;
                         isLeft = false;
                         if (endPoint < startPoint) {
@@ -146,7 +144,14 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    slider3d('.questSl__src', '.questSl__cube--1', '.questSl__arrow__prev--1', '.questSl__arrow__next--2');
+    slider3d('.questSl__src--1', '.questSl__cube--1', '.questSl__arrow__prev--1', '.questSl__arrow__next--1');
+    slider3d('.questSl__src--2', '.questSl__cube--2', '.questSl__arrow__prev--2', '.questSl__arrow__next--2');
+    slider3d('.questSl__src--3', '.questSl__cube--3', '.questSl__arrow__prev--3', '.questSl__arrow__next--3');
+    slider3d('.questSl__src--4', '.questSl__cube--4', '.questSl__arrow__prev--4', '.questSl__arrow__next--4');
+    slider3d('.questSl__src--5', '.questSl__cube--5', '.questSl__arrow__prev--5', '.questSl__arrow__next--5');
+    slider3d('.questSl__src--6', '.questSl__cube--6', '.questSl__arrow__prev--6', '.questSl__arrow__next--6');
+    slider3d('.questSl__src--7', '.questSl__cube--7', '.questSl__arrow__prev--7', '.questSl__arrow__next--7');
+    slider3d('.questSl__src--8', '.questSl__cube--8', '.questSl__arrow__prev--8', '.questSl__arrow__next--8');
     
     // Функция для появления-скрытия модалки
 

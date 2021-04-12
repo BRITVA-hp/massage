@@ -33,6 +33,20 @@
     background-position: center
     padding-top: 150px
     padding-bottom: 175px
+    position: relative
+    &:last-of-type
+        &::after
+            display: none
+    &::after
+        content: ''
+        position: absolute
+        width: 705px
+        height: 1px
+        background-color: #CCA7CF
+        left: 50%
+        bottom: 1px
+        transform: translateX(-50%)
+        box-shadow: 0 0 10px #662C6B
     &__ok
         width: 20px
         height: 20px
