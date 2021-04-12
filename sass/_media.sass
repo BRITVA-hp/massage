@@ -26,6 +26,12 @@
         &__row
             padding-left: 80px
 @media screen and ( max-width: 1600px )
+    .interior
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(650px, 1fr))
+        &__img
+            width: 650px
+            height: 507px
     .questSl
         &__cube
             &--big
@@ -122,6 +128,17 @@
             &--4
                 &--small
                     transform: rotateY(-90deg) translateX(-50%) translateZ(100px)
+@media screen and ( max-width: 1400px )
+    .interior
+        padding-top: 120px
+        padding-bottom: 120px
+        &__text
+            margin-bottom: 120px
+        &__img
+            width: 550px
+            height: 429px
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(550px, 1fr))
 @media screen and ( max-width: 1350px )
     .services
         &-species
@@ -139,6 +156,17 @@
                 font-size: 14px
                 max-width: 540px
 @media screen and ( max-width: 1250px )
+    .interior
+        padding-top: 80px
+        padding-bottom: 80px
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr))
+        &__text
+            max-width: 800px
+            margin-bottom: 80px
+        &__img
+            width: 450px
+            height: 351px
     .services
         &-species
             padding-left: 20px !important
@@ -326,6 +354,18 @@
             justify-content: space-between
             padding-left: 70px
 @media screen and ( max-width: 992px )
+    .interior
+        padding-top: 55px
+        padding-bottom: 55px
+        &__title
+            margin-bottom: 40px
+        &__text
+            margin-bottom: 55px
+        &__img
+            width: 335px
+            height: 236px
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(335px, 1fr))
     .services
         &-species
             padding-top: 90px
@@ -654,7 +694,20 @@
             display: none
         &__tel
             display: block
+@media screen and ( max-width: 767px )
+    .interior
+        &__box
+            justify-items: center
+        &__img
+            &:nth-child(2n)
+                justify-self: center
 @media screen and ( max-width: 575px )
+    .interior
+        &__img
+            width: 290px
+            height: 226px
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
     .services
         &-species
             padding-left: 0 !important
