@@ -3,9 +3,42 @@ window.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.header__burger'),
           header = document.querySelector('.header'),
           headerMenuClose = document.querySelector('.header__menu__close'),
-          map = document.querySelector('#map');
+          map = document.querySelector('#map'),
+          links = document.querySelectorAll('[href^="#"]');
 
 
+    // Скролл до якоря
+          
+    let speed = 1;
+
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+    
+          let widthTop = document.documentElement.scrollTop,
+              hash = this.hash,
+              toBlock =document.querySelector(hash).getBoundingClientRect().top,
+              start = null;
+    
+          requestAnimationFrame(step);
+    
+          function step(time) {
+            if (start === null) {
+              start = time;
+            }
+    
+            let progress = time - start,
+                r = (toBlock < 0 ? Math.max(widthTop - progress/speed, widthTop + toBlock) : Math.min(widthTop + progress/speed, widthTop + toBlock));
+    
+            document.documentElement.scrollTo(0, r);
+            if (r != widthTop + toBlock) {
+              requestAnimationFrame(step);
+            } else {
+              location.hash = hash;
+            }
+          }
+        });
+      });
 
     // Функция для слайдера 3d
 
@@ -209,11 +242,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function headerDeleteClass() {
         header.classList.remove('header--absolute');
+        document.body.style.paddingTop = '';
     }
     burger.addEventListener('click', () => {
         header.classList.toggle('header--active');
         if (header.classList.contains('header--active')) {
             header.classList.add('header--absolute');
+            document.body.style.paddingTop = `${header.firstElementChild.scrollHeight - 3}px`;
         } else {
             setTimeout(headerDeleteClass, 300);
         }
@@ -222,6 +257,8 @@ window.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('header--active');
         setTimeout(headerDeleteClass, 300);
     });
+
+    //Карта
 
     if (map) {
         ymaps.ready(function () {

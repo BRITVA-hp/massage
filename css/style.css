@@ -595,11 +595,18 @@ input:focus {
   background-image: url(../img/index/bgMain.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 0;
-  background-position-x: center;
-  padding-top: 170px;
+  background-position: center;
+  height: calc( 100vh - 119px);
   padding-bottom: 30px;
-  position: relative; }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .main__container {
+    margin: 0;
+    max-width: 100%;
+    flex-basis: 100%; }
   .main__water {
     position: absolute;
     right: 200px;
@@ -611,11 +618,15 @@ input:focus {
     justify-content: center;
     flex-direction: column;
     max-width: 150px;
-    margin: auto; }
+    align-self: flex-end; }
     .main__inner img {
-      transition: 0.3s; }
-    .main__inner:hover img {
-      transform: translateY(5px); }
+      transition: 0.3s;
+      -webkit-animation-name: scrollDownQuest;
+      animation-name: scrollDownQuest;
+      -webkit-animation-duration: 5s;
+      animation-duration: 5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; }
     .main__inner__text {
       font-family: 'Montserrat-Medium';
       font-style: normal;
@@ -626,8 +637,7 @@ input:focus {
       text-shadow: 0 0 5px #FF50F8; }
   .main__button {
     display: block;
-    margin: auto;
-    margin-bottom: 140px; }
+    margin: auto; }
   .main__title {
     text-align: center;
     font-family: 'newtonxc';
@@ -966,6 +976,56 @@ input:focus {
     text-align: center;
     text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     text-align: center; }
+
+.age {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s; }
+  .age--visible {
+    opacity: 1;
+    visibility: visible; }
+  .age__dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; }
+  .age__title {
+    font-family: 'newtonxc';
+    font-style: normal;
+    font-size: 65px;
+    line-height: 100%;
+    text-align: center;
+    text-shadow: 0px 4px 30px rgba(22, 22, 72, 0.93);
+    margin-bottom: 40px; }
+  .age__text {
+    font-family: 'Montserrat-Medium';
+    font-style: normal;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    text-shadow: 0px 4px 30px rgba(22, 22, 72, 0.93);
+    max-width: 770px;
+    margin-bottom: 25px; }
+  .age__button {
+    padding: 15px 90px;
+    margin-bottom: 15px; }
+    .age__button--no {
+      background: transparent; }
+      .age__button--no:hover {
+        border: 2px solid transparent; }
 
 .questMain {
   background-image: url(../img/quest/bgQuestMain.png);
@@ -1619,6 +1679,15 @@ input:focus {
       max-width: 540px; } }
 
 @media screen and (max-width: 1250px) {
+  .age__title {
+    font-size: 45px;
+    margin-bottom: 30px; }
+  .age__text {
+    font-size: 25px;
+    max-width: 555px; }
+  .age__button {
+    font-size: 20px;
+    padding: 12px 60px; }
   .map {
     height: 520px; }
     .map-main {
@@ -1807,7 +1876,7 @@ input:focus {
   .header__button {
     font-size: 16px; }
   .main {
-    padding-top: 120px; }
+    height: calc( 100vh - 105px); }
     .main__water {
       width: 105px;
       right: 30px;
@@ -1820,8 +1889,7 @@ input:focus {
         margin-bottom: 40px; }
     .main__button {
       font-size: 20px;
-      padding: 15px 100px;
-      margin-bottom: 110px; }
+      padding: 15px 100px; }
     .main__title__effect {
       font-size: 72px; }
     .main__title__span:first-of-type {
@@ -1846,10 +1914,21 @@ input:focus {
     padding-left: 70px; } }
 
 @media screen and (max-width: 992px) {
+  .age__title {
+    font-size: 30px;
+    margin-bottom: 20px; }
+  .age__text {
+    font-size: 18px;
+    max-width: 400px; }
+  .age__button {
+    padding: 10px 40px;
+    font-size: 14px;
+    margin-bottom: 10px; }
   .map {
     height: 370px; }
     .map-main {
-      height: calc( 100vh - 94px); }
+      height: calc( 100vh - 94px);
+      padding-bottom: 15px; }
       .map-main__footer {
         font-size: 25px; }
       .map-main__button {
@@ -2140,7 +2219,8 @@ input:focus {
     .section__title {
       font-size: 25px; }
   .main {
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    height: calc( 100vh - 94px); }
     .main__inner img {
       width: 20px; }
     .main__inner__text {
@@ -2274,11 +2354,7 @@ input:focus {
       justify-self: center; }
   .prog {
     background-image: url(../img/index/bgProgMobile.png);
-    background-position-x: 0px; }
-  .main {
-    padding-top: 90px; }
-    .main__button {
-      margin-bottom: 40px; } }
+    background-position-x: 0px; } }
 
 @media screen and (max-width: 450px) {
   .map-main__button {
@@ -2292,12 +2368,48 @@ input:focus {
     background-image: url(../img/index/bgMainMobile.png); } }
 
 @media screen and (max-height: 650px) {
-  .map-main__title {
+  -main__title {
     margin-bottom: 20px !important; }
-  .map-main__text--contacts {
+  -main__text--contacts {
     margin-bottom: 20px !important; } }
 
+@media screen and (max-height: 500px) {
+  .main__text {
+    margin-bottom: 5px; }
+    .main__text--bottom {
+      margin-bottom: 10px; }
+  .main__title__span:first-of-type {
+    font-size: 30px;
+    margin-bottom: 0; }
+  .main__title__span:last-of-type {
+    font-size: 18px;
+    margin-bottom: 5px; }
+  .main__title__effect {
+    font-size: 40px;
+    margin-bottom: 5px; } }
+
 @media screen and (max-height: 450px) {
+  .main {
+    padding-bottom: 10px; }
+    .main__inner__text {
+      font-size: 12px;
+      margin-bottom: 2px; }
+    .main__title__span:first-of-type {
+      font-size: 20px;
+      margin-bottom: 0; }
+    .main__title__span:last-of-type {
+      font-size: 16px;
+      margin-bottom: 5px; }
+    .main__title__effect {
+      font-size: 30px;
+      margin-bottom: 5px; }
+    .main__button {
+      padding: 5px 0;
+      font-size: 14px;
+      line-height: 130%; }
+    .main__text {
+      font-size: 12px;
+      line-height: 120%; }
   .map-main {
     padding-bottom: 10px; }
     .map-main__footer {

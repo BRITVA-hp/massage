@@ -169,6 +169,16 @@
                 font-size: 14px
                 max-width: 540px
 @media screen and ( max-width: 1250px )
+    .age
+        &__title
+            font-size: 45px
+            margin-bottom: 30px
+        &__text
+            font-size: 25px
+            max-width: 555px
+        &__button
+            font-size: 20px
+            padding: 12px 60px
     .map
         height: 520px
         &-main
@@ -370,7 +380,7 @@
         &__button
             font-size: 16px
     .main
-        padding-top: 120px
+        height: calc( 100vh - 105px )
         &__water
             width: 105px
             right: 30px
@@ -384,7 +394,6 @@
         &__button
             font-size: 20px
             padding: 15px 100px
-            margin-bottom: 110px
         &__title
             &__effect
                 font-size: 72px
@@ -412,10 +421,22 @@
             justify-content: space-between
             padding-left: 70px
 @media screen and ( max-width: 992px )
+    .age
+        &__title
+            font-size: 30px
+            margin-bottom: 20px
+        &__text
+            font-size: 18px
+            max-width: 400px
+        &__button
+            padding: 10px 40px
+            font-size: 14px
+            margin-bottom: 10px
     .map
         height: 370px
         &-main
             height: calc( 100vh - 94px )
+            padding-bottom: 15px
             &__footer
                 font-size: 25px
             &__button
@@ -720,6 +741,7 @@
             font-size: 25px
     .main
         padding-bottom: 15px
+        height: calc( 100vh - 94px )
         &__inner
             img
                 width: 20px
@@ -867,10 +889,6 @@
     .prog
         background-image: url(../img/index/bgProgMobile.png)
         background-position-x: 0px
-    .main
-        padding-top: 90px
-        &__button
-            margin-bottom: 40px
 @media screen and ( max-width: 450px )
     .map
         &-main
@@ -886,14 +904,54 @@
         background-image: url(../img/index/bgMainMobile.png)
 
 @media screen and ( max-height: 650px )
-    .map
         &-main
             &__title
                 margin-bottom: 20px !important
             &__text
                 &--contacts
                     margin-bottom: 20px !important
+@media screen and ( max-height: 500px )
+    .main
+        &__text
+            margin-bottom: 5px
+            &--bottom
+                margin-bottom: 10px
+        &__title
+            &__span
+                &:first-of-type
+                    font-size: 30px
+                    margin-bottom: 0
+                &:last-of-type
+                    font-size: 18px
+                    margin-bottom: 5px
+            &__effect
+                font-size: 40px
+                margin-bottom: 5px
 @media screen and ( max-height: 450px )
+    .main
+        padding-bottom: 10px
+        &__inner
+            &__text
+                font-size: 12px
+                margin-bottom: 2px
+        &__title
+            &__span
+                &:first-of-type
+                    font-size: 20px
+                    margin-bottom: 0
+                &:last-of-type
+                    font-size: 16px
+                    margin-bottom: 5px
+            &__effect
+                font-size: 30px
+                margin-bottom: 5px
+        &__button
+            padding: 5px 0
+            font-size: 14px
+            line-height: 130%
+        &__text
+            font-size: 12px
+            line-height: 120%
     .map
         &-main
             padding-bottom: 10px

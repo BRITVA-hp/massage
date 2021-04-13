@@ -52,7 +52,7 @@
 
         <section class="section main">
             <div class="main__water"><img src="img/index/water.png" alt="water"></div>
-            <div class="cotainer">
+            <div class="main__container cotainer">
                 <h1 class="main__title">
                     <span class="main__title__span">Мужской</span>
                     <span class="main__title__span main__title__effect--1 main__title__effect">
@@ -65,15 +65,15 @@
                 <p class="main__text">В твоих руках неограниченная власть — распоряжайся ею правильно. Мы будем полностью в твоем распоряжении.</p>
                 <p class="main__text--bottom">Только отдай приказ</p>
                 <button class="button main__button index__button" data-modal>Подробнее</button>
-                <div class="main__inner">
-                    <p class="main__inner__text">войти внутрь</p>
-                    <img src="img/index/arrow.png" alt="arow">
-                </div>
             </div>
+            <a href="#next" class="main__inner">
+                <p class="main__inner__text">войти внутрь</p>
+                <img src="img/index/arrow.png" alt="arow">
+            </a>
         </section>
         <!-- /.section main -->
 
-        <section class="section prog">
+        <section id="next" class="section prog">
             <div class="container">
                 <h3 class="section__title prog__title">Вы ищите, где расслабиться после трудного дня в Самаре?</h3>
                 <p class="prog__subtitle">Студия «Эмбарго» - это нежный и расслабляющий отдых в Самаре. Подарите себе незабываемый день в студии, куда точно захочется вернуться.</p>
@@ -160,6 +160,16 @@
     <a href="tel:+78463794114" class="phone">
         <img src="./img/logo/phone.png" alt="phone">
     </a>
+
+    <div class="age">
+        <div class="age__dialog">
+            <p class="age__title">Проверка возраста</p>
+            <p class="age__text">Сайт содержит информацию, предназначенную для лиц старше 21 год</p>
+            <button class="button age__button age__button--yes">Мне старше 21 года</button>
+            <button class="button age__button age__button--no">Мне нет 21 года</button>
+        </div>
+    </div>
+    <!-- /.age -->
     
 
     <script src="js/script.js"></script>

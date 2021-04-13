@@ -2,11 +2,18 @@
     background-image: url(../img/index/bgMain.png)
     background-repeat: no-repeat
     background-size: cover
-    background-position-y: 0
-    background-position-x: center
-    padding-top: 170px
+    background-position: center
+    height: calc( 100vh - 119px )
     padding-bottom: 30px
     position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    &__container
+        margin: 0
+        max-width: 100%
+        flex-basis: 100%
     &__water
         position: absolute
         right: 200px
@@ -18,12 +25,12 @@
         justify-content: center
         flex-direction: column
         max-width: 150px
-        margin: auto
+        align-self: flex-end
         img
             transition: 0.3s
-        &:hover
-            img
-                transform: translateY(5px)
+            animation-name: scrollDownQuest
+            animation-duration: 5s
+            animation-iteration-count: infinite
         &__text
             font-family: 'Montserrat-Medium'
             font-style: normal
@@ -35,7 +42,6 @@
     &__button
         display: block
         margin: auto
-        margin-bottom: 140px
     &__title
         text-align: center
         font-family: 'newtonxc'
