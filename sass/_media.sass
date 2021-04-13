@@ -51,6 +51,19 @@
                 width: 400px
                 height: 480px
 @media screen and ( max-width: 1550px )
+    .stocks
+        &__box
+            grid-template-columns: repeat(auto-fill, minmax(390px, 1fr))
+        &__card
+            width: 390px
+            &__title
+                font-size: 28px
+                margin-bottom: 25px
+            &__text
+                font-size: 20px
+            &__box
+                height: 280px
+                padding: 50px 30px 0
     .services
         &-species
             &__row
@@ -156,6 +169,31 @@
                 font-size: 14px
                 max-width: 540px
 @media screen and ( max-width: 1250px )
+    .stocks
+        padding-top: 100px
+        padding-bottom: 100px
+        &__container
+            column-gap: 80px
+        &__text
+            font-size: 24px
+        &__title
+            margin-bottom: 20px
+        &__box
+            row-gap: 50px
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr))
+        &__button
+            font-size: 18px
+            padding: 10px 0
+        &__card
+            width: 330px
+            &__box
+                height: 215px
+                padding: 30px 20px 0
+            &__title
+                font-size: 25px
+                margin-bottom: 10px
+            &__text
+                font-size: 16px
     .interior
         padding-top: 80px
         padding-bottom: 80px
@@ -349,11 +387,30 @@
                     font-size: 35px
 
 @media screen and ( max-width: 1100px )
+    .stocks
+        &__text
+            font-size: 18px
+            &:first-of-type
+                margin-bottom: 10px
+                padding-bottom: 10px
+        &__container
+            max-width: 800px
+        &__box
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
     .questSl
         &__row
             justify-content: space-between
             padding-left: 70px
 @media screen and ( max-width: 992px )
+    .stocks
+        padding-top: 60px
+        padding-bottom: 60px
+        &__container
+            max-width: 690px
+        &__title
+            margin-bottom: 0px
     .interior
         padding-top: 55px
         padding-bottom: 55px
@@ -695,6 +752,22 @@
         &__tel
             display: block
 @media screen and ( max-width: 767px )
+    .stocks
+        &__text
+            text-align: center
+        &__container
+            grid-template: repeat(4, auto) / 1fr
+            grid-template-areas: 'stocksTitle' 'stocksWrap' 'stocksBox' 'stocksCard'
+            justify-items: center
+            grid-gap: 50px
+        &__box
+            display: grid
+            grid-template-columns: 1fr
+            justify-items: center
+        &__card
+            width: 290px
+            &__box
+                height: 215px
     .interior
         &__box
             justify-items: center
