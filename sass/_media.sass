@@ -169,6 +169,13 @@
                 font-size: 14px
                 max-width: 540px
 @media screen and ( max-width: 1250px )
+    .map
+        &-main
+            height: calc( 100vh - 105px )
+            &__footer
+                font-size: 35px
+            &__button
+                font-size: 20px
     .stocks
         padding-top: 100px
         padding-bottom: 100px
@@ -404,6 +411,22 @@
             justify-content: space-between
             padding-left: 70px
 @media screen and ( max-width: 992px )
+    .map
+        &-main
+            height: calc( 100vh - 94px )
+            &__footer
+                font-size: 25px
+            &__button
+                font-size: 14px
+                padding: 10px 80px
+            &__text
+                margin-left: auto
+                margin-right: auto
+                margin-bottom: 0 !important
+                &--contacts
+                    margin-left: auto
+                    margin-right: auto
+                    margin-bottom: 30px !important
     .stocks
         padding-top: 60px
         padding-bottom: 60px
@@ -847,6 +870,11 @@
         &__button
             margin-bottom: 40px
 @media screen and ( max-width: 450px )
+    .map
+        &-main
+            &__button
+                width: 100%
+                padding: 10px 0
     .footer
         &__row
             grid-gap: 20px
@@ -855,7 +883,29 @@
     .main
         background-image: url(../img/index/bgMainMobile.png)
 
+@media screen and ( max-height: 650px )
+    .map
+        &-main
+            &__title
+                margin-bottom: 20px !important
+            &__text
+                &--contacts
+                    margin-bottom: 20px !important
 @media screen and ( max-height: 450px )
+    .map
+        &-main
+            padding-bottom: 10px
+            &__footer
+                font-size: 16px
+            &__button
+                padding-top: 5px
+                padding-bottom: 5px
+            &__title
+                margin-bottom: 5px !important
+                font-size: 20px
+            &__text
+                &--contacts
+                    margin-bottom: 5px !important
     .services
         &-Main
             &__text
