@@ -4,7 +4,40 @@ window.addEventListener('DOMContentLoaded', () => {
           header = document.querySelector('.header'),
           headerMenuClose = document.querySelector('.header__menu__close'),
           map = document.querySelector('#map'),
-          links = document.querySelectorAll('[href^="#"]');
+          links = document.querySelectorAll('[href^="#"]'),
+          ageButtonYes = document.querySelector('.age__button--yes'),
+          ageButtonNo = document.querySelector('.age__button--no'),
+          ageModal = document.querySelector('.age'),
+          modalSuccessAge = document.querySelector('.modal-success--age'),
+          modalSuccessDialogAge = document.querySelector('.modal-success__dialog--age');
+
+    //Проверка возраста
+
+    if (localStorage.getItem('age') === '>=21') {
+        document.body.style.overflow = '';
+        ageModal.classList.remove('age--visible');
+    } else {
+        document.body.style.overflow = 'hidden';
+    }
+    ageButtonYes.addEventListener('click', () => {
+        document.body.style.overflow = '';
+        ageModal.classList.remove('age--visible');
+        localStorage.setItem('age', '>=21');
+    });
+
+    ageButtonNo.addEventListener('click', () => {
+        modalSuccessAge.classList.add('modal-success--visible');
+    });
+
+    modalSuccessAge.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-success')) {
+            modalSuccessAge.classList.remove('modal-success--visible');
+        }
+    });
+
+    modalSuccessDialogAge.addEventListener('click', () => {
+        modalSuccessAge.classList.remove('modal-success--visible');
+    });
 
 
     // Скролл до якоря
