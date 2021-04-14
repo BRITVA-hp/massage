@@ -902,6 +902,16 @@ input:focus {
     display: block; }
     .modal__input:focus {
       outline: none; }
+    .modal__input-group {
+      position: relative; }
+    .modal__input__invalid {
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      font-family: 'Montserrat-SemiBold';
+      font-style: normal;
+      font-size: 10px;
+      color: tomato; }
   .modal__button {
     padding: 10px 0;
     width: 430px;
@@ -922,7 +932,16 @@ input:focus {
     display: none; }
     .modal__check:checked + .modal__ok {
       background-image: url(../img/logo/check.png); }
+    .modal__check__invalid {
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      font-family: 'Montserrat-SemiBold';
+      font-style: normal;
+      font-size: 10px;
+      color: tomato; }
   .modal__ok {
+    display: block;
     background: #FFFFFF;
     box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.44);
     border-radius: 2px;
@@ -1081,6 +1100,7 @@ input:focus {
     transform: translateX(-50%);
     box-shadow: 0 0 10px #662C6B; }
   .questSl__ok {
+    display: block;
     width: 20px;
     height: 20px;
     background: #FFFFFF;
@@ -1137,6 +1157,11 @@ input:focus {
     color: rgba(255, 255, 255, 0.6);
     padding: 15px 20px;
     margin-right: 115px; }
+    .questSl__input__invalid {
+      left: 0 !important;
+      transform: none !important; }
+    .questSl__input-group {
+      position: relative; }
   .questSl__param {
     padding-bottom: 15px;
     position: relative;
@@ -1767,6 +1792,8 @@ input:focus {
     .questSl__input {
       width: 370px;
       margin-bottom: 15px; }
+      .questSl__input__invalid {
+        bottom: -10px; }
     .questSl__row {
       align-items: center; }
       .questSl__row--form {
@@ -2036,6 +2063,8 @@ input:focus {
   .questSl {
     padding-top: 40px;
     padding-bottom: 60px; }
+    .questSl__ok {
+      top: 30%; }
     .questSl::after {
       width: 300px; }
     .questSl__arrow {
@@ -2155,6 +2184,9 @@ input:focus {
     margin-bottom: 14px; }
     .modal__input--name {
       text-align: center; }
+    .modal__input__invalid {
+      left: 50%;
+      transform: translateX(-50%); }
   .modal__title {
     font-size: 18px;
     margin-bottom: 20px; }

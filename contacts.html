@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>MBAR.GO</title>
 </head>
 <body>
     
@@ -104,15 +113,18 @@
             <p class="modal__subtitle">Наш менеджер свяжется с вами в ближайшее время</p>
             <div class="modal__input-group">
                 <input type="text" placeholder="Имя" name="name" class="modal__input modal__input--name">
+                <span class="modal__input__invalid">Заполните поле</span>
             </div>
             <div class="modal__input-group">
                 <input type="tel" placeholder="+7 (___) ___-__-__" name="tel" class="modal__input">
+                <span class="modal__input__invalid">Заполните поле</span>
             </div>
             <button class="button modal__button">Заказать</button>
             <label for="check" class="modal__label">
                 Ваш телефон необходим только для связи с Вами. Он ни в коем случае не будет передан третьим лицам.
                 <input checked name="check" id="check" class="modal__check" type="checkbox">
-                <div class="modal__ok"></div>
+                <span class="modal__ok"></span>
+                <span class="modal__check__invalid">Согласитесь с обработкой данных</span>
             </label>
         </form>
     </div>

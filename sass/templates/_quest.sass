@@ -48,6 +48,7 @@
         transform: translateX(-50%)
         box-shadow: 0 0 10px #662C6B
     &__ok
+        display: block
         width: 20px
         height: 20px
         background: #FFFFFF
@@ -104,6 +105,11 @@
         color: rgba(255, 255, 255, 0.6)
         padding: 15px 20px
         margin-right: 115px
+        &__invalid
+            left: 0 !important
+            transform: none !important
+        &-group
+            position: relative
     &__param
         padding-bottom: 15px
         position: relative
